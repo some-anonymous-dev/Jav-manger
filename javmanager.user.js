@@ -7,9 +7,9 @@
 // @match        https://javdb.com/*
 // @exclude      https://javdb.com/actors/*
 // @exclude      https://javdb.com/v/*
-// @match        https://www.javlibrary.com/cn/vl_bestrated.php*
-// @match        https://www.javlibrary.com/cn/vl_mostwanted.php*
-// @match        https://www.javlibrary.com/cn/vl_update.php*
+// @match        https://www.javlibrary.com/*/vl_bestrated.php*
+// @match        https://www.javlibrary.com/*/vl_mostwanted.php*
+// @match        https://www.javlibrary.com/*/vl_update.php*
 // @grant        GM_xmlhttpRequest
 // @grant        GM_download
 // @grant        GM_setValue
