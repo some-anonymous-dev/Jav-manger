@@ -10,6 +10,10 @@
 - 自动爬取影片对应演员信息
 - 可以根据演员信息/喜爱程度在页面内排序
 
+使用<a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank">Tampermonkey</a>扩展插件来安装使用脚本，已经安装插件，可以点击<a href="https://www.tampermonkey.net/script_installation.php#url=https://raw.githubusercontent.com/some-anonymous-dev/Jav-manger/main/javmanager.js">直接安装</a>
+
+https://greasyfork.org/zh-CN/scripts/522820-jav-manager
+
 ---
 
 ## 适用界面
