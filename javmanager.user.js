@@ -7,9 +7,14 @@
 // @match        https://javdb.com/*
 // @exclude      https://javdb.com/actors/*
 // @exclude      https://javdb.com/v/*
+// @exclude      https://javdb.com/search?q=*
 // @match        https://www.javlibrary.com/*/vl_bestrated.php*
 // @match        https://www.javlibrary.com/*/vl_mostwanted.php*
 // @match        https://www.javlibrary.com/*/vl_update.php*
+// @match        https://www.javlibrary.com/*/vl_genre.php*
+// @match        https://www.javlibrary.com/*/vl_newrelease.php*
+// @match        https://www.javlibrary.com/*/vl_newentries.php*
+// @match        https://www.javlibrary.com/*/
 // @grant        GM_xmlhttpRequest
 // @grant        GM_download
 // @grant        GM_setValue
@@ -2003,6 +2008,18 @@
         }, 500);
     }
 
+    // can be used to listen to other event sent by other scripts
+    // useful for interation
+    // here we have another script which give waterfull like infite scroll and sent a infiniteScoroll:newPageLoaded event, we insert actors and modifypage everytime after newPageLoaded
+    function setupEventListener() {
+        window.addEventListener('infiniteScroll:newPageLoaded', function(event) {
+            console.log('Received infiniteScroll:newPageLoaded event:', event.detail);
+            toggleActorsColumn();
+            toggleActorsColumn();
+            modifyPage();
+        });
+    }
+
     function init() {
         createKeywordManager();
         const hostname = window.location.hostname;
@@ -2016,6 +2033,8 @@
         } else {
             console.log('Detected other site, applying minimal logic...');
         }
+
+        setupEventListener();
     }
     init();
 })();
